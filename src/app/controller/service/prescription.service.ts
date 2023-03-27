@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 export class PrescriptionService {
   private _prescription : Prescription;
   private _prescriptions : Array<Prescription>;
-  private url : "http://localhost:8090/api/PR/prescription/"
+  private url : "http://localhost:8090/api/PR/prescription/";
 
   public save() : Observable<Prescription>{
     return this.http.post<Prescription>(this.url, this._prescription);

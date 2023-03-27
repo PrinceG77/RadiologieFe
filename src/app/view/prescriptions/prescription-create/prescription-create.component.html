@@ -1,17 +1,22 @@
 <div class="card">
-  <div class="card-head">Création Prescription</div>
+  <div class="card-head text-center fw-bold">PRESCRIPTION</div>
   <div class="card-body">
     <div class="form-group">
       <label for="ref">Réferénce : </label>
-      <input id="ref" type="text" class="from-control" [(ngModel)]="prescription.ref">
+      <input id="ref" type="text" class="from-control mx-5" [(ngModel)]="prescription.ref">
     </div>
-    <div class="form-group">
-      <label for="nbrTotalSeance">Nombre de séances désirées :</label>
-      <input id="nbrTotalSeance" type="text" class="from-control" [(ngModel)]="prescription.nbrTotalSeance">
+    <div class="form-group mt-3">
+      <label for="nbrTotalSeance">Nombre total de séances :</label>
+      <input id="nbrTotalSeance" type="text" class="from-control mx-3" [(ngModel)]="prescription.nbrTotalSeance">
     </div>
-    <div class="form-group">
+    <div class="form-group mt-3">
       <label for="dateDebut">Date début :</label>
-      <input id="dateDebut" type="text" class="from-control" [(ngModel)]="prescription.dateDebut">
+      <input id="dateDebut" type="text" class="from-control mx-5" [(ngModel)]="prescription.dateDebut">
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="datePrescription">Date Prescription :</label>
+      <input id="datePrescription" type="text" class="from-control mx-5" [(ngModel)]="prescription.datePrescription">
     </div>
   </div>
   <div class="card-footer">
