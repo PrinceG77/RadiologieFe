@@ -11,8 +11,10 @@ export class Prescription {
   public  ref : string ;
   public patient : Patient;
   public frequence : Frequence;
-  private  seances : Array<Seance>;
-  private  consultations : Array<Consultation>;
+  public  seances : Array<Seance>;
+  public  consultations : Array<Consultation>;
   public dateDebut : Date;
   public etatPresci : EtatPrescription;
+
+
 }

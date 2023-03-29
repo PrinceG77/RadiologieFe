@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Prescription} from "../model/prescription.model";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Seance} from "../model/seance.model";
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,13 @@ import {Observable} from "rxjs";
 export class PrescriptionService {
   private _prescription : Prescription;
   private _prescriptions : Array<Prescription>;
-  private url : "http://localhost:8090/api/PR/prescription/";
+
+  private _seance : Seance;
+
+  public url : string;
 
   public save() : Observable<Prescription>{
+    this.url = "http://localhost:8090/api/PR/prescription/";
     console.log(this.url);
     return this.http.post<Prescription>(this.url, this._prescription);
 
@@ -46,5 +51,18 @@ export class PrescriptionService {
 
   set prescriptions(value: Array<Prescription>) {
     this._prescriptions = value;
+  }
+
+
+  get seance(): Seance {
+    if(this._seance == null)
+    {
+      this._seance = new Seance();
+    }
+    return this._seance;
+  }
+
+  set seance(value: Seance) {
+    this._seance = value;
   }
 }

@@ -16,16 +16,16 @@ export class PrescriptionCreateComponent implements OnInit{
 
   public save() : void{
     this.prescriptionService.save().subscribe(data => {
-      if(data != null){
+      if (data != null) {
         alert('SAVE SUCCES !');
 
-      }
-      else
-      {
+      } else {
         alert('SAVE ERROR :: REF EXISTS');
       }
-    }, error => {console.log("erreur !!")})
+    });
   }
+
+
 
   get prescription(): Prescription {
 
