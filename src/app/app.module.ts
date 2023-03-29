@@ -7,12 +7,16 @@ import { PrescriptionCreateComponent } from './view/prescriptions/prescription-c
 import { PrescriptionListComponent } from './view/prescriptions/prescription-list/prescription-list.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { SeanceCreateComponent } from './view/seances/seance-create/seance-create.component';
+import { SeanceListComponent } from './view/seances/seance-list/seance-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrescriptionCreateComponent,
-    PrescriptionListComponent
+    PrescriptionListComponent,
+    SeanceCreateComponent,
+    SeanceListComponent
   ],
   imports: [
     BrowserModule,

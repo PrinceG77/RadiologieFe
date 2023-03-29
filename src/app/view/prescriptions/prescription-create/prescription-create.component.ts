@@ -18,12 +18,13 @@ export class PrescriptionCreateComponent implements OnInit{
     this.prescriptionService.save().subscribe(data => {
       if(data != null){
         alert('SAVE SUCCES !');
+
       }
       else
       {
         alert('SAVE ERROR :: REF EXISTS');
       }
-    })
+    }, error => {console.log("erreur !!")})
   }
 
   get prescription(): Prescription {

@@ -12,7 +12,9 @@ export class PrescriptionService {
   private url : "http://localhost:8090/api/PR/prescription/";
 
   public save() : Observable<Prescription>{
+    console.log(this.url);
     return this.http.post<Prescription>(this.url, this._prescription);
+
 }
 
 
@@ -25,6 +27,8 @@ export class PrescriptionService {
     {
       this._prescription = new Prescription();
     }
+
+
     return this._prescription;
   }
 
