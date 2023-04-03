@@ -12,10 +12,16 @@ import { SeanceListComponent } from './view/seances/seance-list/seance-list.comp
 import {RouterModule, Routes} from "@angular/router";
 import { MenuComponent } from './view/menu/menu.component';
 import { PageNotFoundComponent } from './view/page-not-found/page-not-found.component';
+import { PatientCreateComponent } from './view/patients/patient-create/patient-create.component';
+import { PatientListComponent } from './view/patients/patient-list/patient-list.component';
 
 const appRoutes : Routes = [
   {path: 'prescription-create', component : PrescriptionCreateComponent},
   {path: 'prescription-list', component : PrescriptionListComponent},
+  {path: 'patient-create', component : PatientCreateComponent},
+  {path: 'patient-list', component : PatientListComponent},
+  {path: 'seance-create', component : SeanceCreateComponent},
+  {path: 'seance-list', component : SeanceListComponent},
   {path: '', component : PrescriptionCreateComponent},
   {path: '**', component : PageNotFoundComponent}
 
@@ -28,7 +34,9 @@ const appRoutes : Routes = [
     SeanceCreateComponent,
     SeanceListComponent,
     MenuComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PatientCreateComponent,
+    PatientListComponent
   ],
   imports: [
     BrowserModule,
