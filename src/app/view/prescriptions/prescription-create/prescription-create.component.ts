@@ -17,6 +17,7 @@ export class PrescriptionCreateComponent implements OnInit{
   public save() : void{
     this.prescriptionService.save().subscribe(data => {
       if (data != null) {
+        this.prescriptionService.prescription = null;
         alert('SAVE SUCCES !');
 
       } else {

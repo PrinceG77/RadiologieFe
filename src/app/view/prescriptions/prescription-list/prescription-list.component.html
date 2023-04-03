@@ -1,1 +1,20 @@
-<p>prescription-list works!</p>
+<table class="table table-primary table-striped table-hover caption-top">
+  <caption>Liste de prescriptions</caption>
+  <thead>
+  <tr>
+    <th scope="col">Référence</th>
+    <th scope="col">Nombre séances</th>
+    <th scope="col">Début</th>
+    <th scope="col">Date Prescription</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of prescriptions">
+    <th scope="row">{{p.ref}}</th>
+    <td>{{p.nbrTotalSeance}}</td>
+    <td>{{p.dateDebut}}</td>
+    <td>{{p.datePrescription}}</td>
+  </tr>
+
+  </tbody>
+</table>
