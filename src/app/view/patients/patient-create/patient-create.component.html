@@ -1,0 +1,24 @@
+
+
+<div class="card">
+  <div class="card-head text-center fw-bold">INSCRIPTION PATIENT</div>
+  <div class="card-body">
+    <div class="form-group mt-2">
+      <label for="nom">Nom : </label>
+      <input id="nom" type="text" class="from-control mx-5" [(ngModel)]="patient.nom">
+    </div>
+    <div class="form-group mt-3">
+      <label for="cin">Cin : </label>
+      <input id="cin" type="text" class="from-control mx-5" [(ngModel)]="patient.cin">
+    </div>
+    <div class="form-group mt-3">
+      <label for="password">Mot de passe : </label>
+      <input id="password" type="password" class="from-control mx-5"  [(ngModel)]="patient.password" required>
+    </div>
+
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-outline-success" (click)="save()">Valider</button>
+    <button class="btn btn-outline-success mx-3" routerLink="/patient-list" routerLinkActive="active">Afficher patients</button>
+  </div>
+</div>

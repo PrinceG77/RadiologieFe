@@ -1,0 +1,17 @@
+<table class="table table-primary table-striped table-hover caption-top">
+  <caption>Liste de patients</caption>
+  <thead>
+  <tr>
+    <th scope="col">Cin</th>
+    <th scope="col">Nom</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of patients">
+    <th scope="row">{{p.cin}}</th>
+    <td>{{p.nom}}</td>
+
+  </tr>
+
+  </tbody>
+</table>
