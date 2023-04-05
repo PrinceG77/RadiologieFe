@@ -17,11 +17,11 @@ export class PatientCreateComponent implements OnInit{
     this.patientService.save().subscribe(data => {
       if(data != null){
         this.patientService.patient = null;
-      alert('Patient créé avec succès !');
+      alert('PATIENT CRÉÉ/MODIFIÉ AVEC SUCCÈS !');
 
     }
     else {
-      alert('Impossible de créer un patient !');
+      alert('ERREUR : MODIFICATION/CRÉATION IMPOSSIBLE !');
     }});
 
   }

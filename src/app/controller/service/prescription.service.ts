@@ -14,14 +14,29 @@ export class PrescriptionService {
   private _seance : Seance;
 
   public url : string;
+  public _index : number;
 
   public save() : Observable<Prescription>{
     this.url = "http://localhost:8090/api/PR/prescription/";
-    console.log(this.url);
-    this._prescriptions.push(this.clonePrescription(this._prescription));
-    return this.http.post<Prescription>(this.url, this._prescription);
+    if(this._prescription.id == null)
+    {
+      this._prescriptions.push(this.clonePrescription(this.prescription));
+      return this.http.post<Prescription>(this.url, this.prescription);
+      console.log(this.url);
+    }
+    else{
+      this.prescriptions[this._index] = this._prescription;
+      return this.http.put<Prescription>(this.url, this._prescription);
+    }
+
 
 }
+
+  public update(index : number, prescrciption : Prescription){
+    this.prescription = this.clonePrescription(prescrciption);
+    this._index = index;
+
+  }
 
   public findAll() : Observable<Array<Prescription>>{
     this.url = "http://localhost:8090/api/PR/prescription/";
@@ -29,6 +44,14 @@ export class PrescriptionService {
     return this.http.get<Array<Prescription>>(this.url);
 
 
+  }
+
+  public findByPrescriptionRef(ref : string) : Observable<Array<Seance>> {
+    return this.http.get<Array<Seance>>("http://localhost:8090/api/PR/seance/prescription/ref/" + ref);
+  }
+
+  public deleteByRef(ref : string) : Observable<number>{
+    return this.http.delete<number>(this.url + "ref/" + ref);
   }
 
 
@@ -90,4 +113,6 @@ export class PrescriptionService {
 
     return p_clone;
   }
+
+
 }

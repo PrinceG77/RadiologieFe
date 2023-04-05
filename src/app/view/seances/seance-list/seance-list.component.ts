@@ -20,6 +20,11 @@ export class SeanceListComponent implements OnInit{
   {
     this.seanceService.findAll().subscribe(data => this.seances = data);
   }
+/*
+  public findByPrescriptionRef(ref: string) : void {
+    this.seanceService.findByPresccriptionRef(ref).subscribe(data => this.seances = data);
+
+  }*/
 
   get seances(): Array<Seance> {
 

@@ -3,11 +3,35 @@
 
   <div class="row ">
     <label>Référence prescription</label>
-    <input type="text" class="col-3"  >
-    <button class="btn btn-outline-info col-1 mx-2" >Chercher</button>
+    <input type="text" class="col-3" [(ngModel)]="seance.prescription.ref" >
+    <button class="btn btn-outline-info col-2 mx-2" >Chercher </button>
   </div>
   <div class="row ">
     <button class="btn btn-outline-secondary col-4 mt-3" routerLink="/seance-list" routerLinkActive="active">Voir toutes les Séances</button>
 
   </div>
 </div>
+
+<div class="row ">
+  <table class="table table-primary table-striped table-hover caption-top">
+    <caption>Liste de seances</caption>
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Début</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let s of seances">
+      <th scope="row">{{s.id}}</th>
+      <td>{{s.dateDebut}}</td>
+
+
+    </tr>
+
+    </tbody>
+  </table>
+
+  </div>

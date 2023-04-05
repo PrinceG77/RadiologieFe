@@ -1,19 +1,19 @@
 
 
-<div class="card">
-  <div class="card-head text-center fw-bold">INSCRIPTION PATIENT</div>
+<div class="card col-10 mt-4">
+  <div class="card-header text-center fw-bold">INSCRIPTION PATIENT</div>
   <div class="card-body">
-    <div class="form-group mt-2">
-      <label for="nom">Nom : </label>
-      <input id="nom" type="text" class="from-control mx-5" [(ngModel)]="patient.nom">
+    <div class="form-group mt-2 col-5">
+      <label for="nom">Nom</label>
+      <input id="nom" type="text" class="form-control" [(ngModel)]="patient.nom" required>
     </div>
-    <div class="form-group mt-3">
-      <label for="cin">Cin : </label>
-      <input id="cin" type="text" class="from-control mx-5" [(ngModel)]="patient.cin">
+    <div class="form-group mt-3 col-5">
+      <label for="cin">Cin</label>
+      <input id="cin" type="text" class="form-control" [(ngModel)]="patient.cin" required>
     </div>
-    <div class="form-group mt-3">
-      <label for="password">Mot de passe : </label>
-      <input id="password" type="password" class="from-control mx-5"  [(ngModel)]="patient.password" required>
+    <div class="form-group mt-3 col-5">
+      <label for="password">Mot de passe</label>
+      <input id="password" type="password" class="form-control "  [(ngModel)]="patient.password" required>
     </div>
 
   </div>

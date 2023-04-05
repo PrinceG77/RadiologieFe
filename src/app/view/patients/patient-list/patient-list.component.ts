@@ -28,4 +28,21 @@ export class PatientListComponent implements OnInit{
     this.patientService.patients = value;
   }
 
+  public deleteByCin(patient : Patient, index : number) : void{
+
+    this.patientService.deleteByCin(patient.cin).subscribe(data => {
+      if(data > 0 ){
+        alert("Patient supprimé avec succès !");
+        this.patients.splice(index, 1);
+      }
+      else {
+        alert("Erreur : Impossible de supprimer cet élément !");
+      }
+    })
+  }
+
+  public update(i: number, patient: Patient) : void {
+    this.patientService.update(i, patient);
+
+  }
 }

@@ -15,15 +15,24 @@ export class PrescriptionCreateComponent implements OnInit{
   }
 
   public save() : void{
+
+    if(this.prescription.ref == null || this.prescription.nbrTotalSeance == null ||
+      this.prescription.dateDebut == null || this.prescription.datePrescription == null)
+    {
+      alert('ERREUR : VEUILLEZ REMPLIR TOUS LES CHAMPS !');
+    }
+
     this.prescriptionService.save().subscribe(data => {
       if (data != null) {
         this.prescriptionService.prescription = null;
-        alert('SAVE SUCCES !');
+        alert('PRESCRIPTION CRÉÉ/MODIFIÉ AVEC SUCCÈS !');
 
       } else {
-        alert('SAVE ERROR :: REF EXISTS');
+        alert('ERREUR : MODIFICATION/CRÉATION IMPOSSIBLE !');
       }
     });
+
+
   }
 
 

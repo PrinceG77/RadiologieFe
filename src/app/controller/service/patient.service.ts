@@ -10,16 +10,36 @@ export class PatientService {
   private _patient : Patient;
   private _patients : Array <Patient>;
   private url : string = "http://localhost:8090/api/PR/patient";
+  private _index : number ;
 
   public save(): Observable<Patient>{
-    console.log(this.url);
-    this._patients.push(this.clonePatient(this._patient));
-    return this.http.post<Patient>(this.url + "/", this._patient);
+
+
+    if(this.patient.id == null){
+      this._patients.push(this.clonePatient(this._patient));
+      return this.http.post<Patient>(this.url + "/", this._patient);
+      console.log(this.url);
+    }
+    else{
+      this.patients[this._index] = this.patient;
+      return this.http.put<Patient>(this.url + "/", this._patient);
+      console.log(this.url);
+    }
+
+  }
+
+  public update(i: number, patient: Patient) {
+    this.patient = this.clonePatient(patient);
+    this._index = i;
   }
 
   public findAll() : Observable<Array<Patient>>{
     console.log(this.url);
     return this.http.get<Array<Patient>>(this.url + "/");
+  }
+
+  public deleteByCin(cin : string) : Observable<number>{
+    return this.http.delete<number>(this.url + "/cin/" + cin);
   }
 
 
@@ -60,5 +80,7 @@ export class PatientService {
 
     return clone_patient;
   }
+
+
 }
 

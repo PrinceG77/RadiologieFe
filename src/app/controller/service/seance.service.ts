@@ -20,10 +20,10 @@ export class SeanceService {
 
   }
 
-  public findByPresccriptionRef() : Observable<Array<Seance>>{
+  public findByPresccriptionRef(ref : string) : Observable<Array<Seance>>{
 
     console.log(this.url);
-    return this.http.get<Array<Seance>>(this.url + "/");
+    return this.http.get<Array<Seance>>(this.url + "/prescription/ref/" + ref);
 
 
   }
