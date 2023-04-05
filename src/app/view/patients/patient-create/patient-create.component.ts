@@ -14,6 +14,12 @@ export class PatientCreateComponent implements OnInit{
   }
 
   public save() : void{
+
+   /* if(this.patient.cin == null || this.patient.nom == null ||
+      this.patient.password == null )
+    {
+      alert('ERREUR : VEUILLEZ REMPLIR TOUS LES CHAMPS !');
+    }*/
     this.patientService.save().subscribe(data => {
       if(data != null){
         this.patientService.patient = null;

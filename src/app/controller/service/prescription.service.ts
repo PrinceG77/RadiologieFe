@@ -20,7 +20,7 @@ export class PrescriptionService {
     this.url = "http://localhost:8090/api/PR/prescription/";
     if(this._prescription.id == null)
     {
-      this._prescriptions.push(this.clonePrescription(this.prescription));
+      this.prescriptions.push(this.clonePrescription(this.prescription));
       return this.http.post<Prescription>(this.url, this.prescription);
       console.log(this.url);
     }

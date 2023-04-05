@@ -16,7 +16,7 @@ export class PatientService {
 
 
     if(this.patient.id == null){
-      this._patients.push(this.clonePatient(this._patient));
+      this.patients.push(this.clonePatient(this._patient));
       return this.http.post<Patient>(this.url + "/", this._patient);
       console.log(this.url);
     }
