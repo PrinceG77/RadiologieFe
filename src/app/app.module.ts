@@ -14,6 +14,7 @@ import { MenuComponent } from './view/menu/menu.component';
 import { PageNotFoundComponent } from './view/page-not-found/page-not-found.component';
 import { PatientCreateComponent } from './view/patients/patient-create/patient-create.component';
 import { PatientListComponent } from './view/patients/patient-list/patient-list.component';
+import { HomepageComponent } from './view/homepage/homepage.component';
 
 const appRoutes : Routes = [
   {path: 'prescription-create', component : PrescriptionCreateComponent},
@@ -22,7 +23,8 @@ const appRoutes : Routes = [
   {path: 'patient-list', component : PatientListComponent},
   {path: 'seance-create', component : SeanceCreateComponent},
   {path: 'seance-list', component : SeanceListComponent},
-  {path: '', component : PrescriptionCreateComponent},
+  {path: 'homepage', component : HomepageComponent},
+  {path: '', component : HomepageComponent},
   {path: '**', component : PageNotFoundComponent}
 
 ]
@@ -36,7 +38,8 @@ const appRoutes : Routes = [
     MenuComponent,
     PageNotFoundComponent,
     PatientCreateComponent,
-    PatientListComponent
+    PatientListComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

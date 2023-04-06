@@ -33,4 +33,7 @@ export class SeanceCreateComponent implements OnInit{
   }
 
 
+  public findAll() {
+    return this.seanceService.findAll();
+  }
 }

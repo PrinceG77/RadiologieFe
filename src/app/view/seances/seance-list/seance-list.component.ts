@@ -13,7 +13,7 @@ export class SeanceListComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.findAll();
+    //this.findAll();
   }
 
   public findAll() : void
