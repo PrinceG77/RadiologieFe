@@ -3,6 +3,9 @@ import {PrescriptionService} from "../../../controller/service/prescription.serv
 import {Prescription} from "../../../controller/model/prescription.model";
 import {Seance} from "../../../controller/model/seance.model";
 import {SeanceService} from "../../../controller/service/seance.service";
+import {Router} from "@angular/router";
+import {HistoriquePrescriptionService} from "../../../controller/service/historique-prescription.service";
+
 
 @Component({
   selector: 'app-prescription-list',
@@ -11,7 +14,8 @@ import {SeanceService} from "../../../controller/service/seance.service";
 })
 export class PrescriptionListComponent implements OnInit{
 
-  constructor(private prescriptionService : PrescriptionService, private seanceService : SeanceService) {
+  constructor(private prescriptionService : PrescriptionService, public seanceService : SeanceService, private router : Router,
+              private historiqueService : HistoriquePrescriptionService) {
   }
 
   ngOnInit(): void {
@@ -33,6 +37,9 @@ export class PrescriptionListComponent implements OnInit{
   }
 
   public deleteByRef(prescription : Prescription, index : number) : void {
+    let confirmation = confirm("Êtes-vous certain de vouloir supprimer cette prescription ?");
+    if(!confirmation) return;
+
     this.prescriptionService.deleteByRef(prescription.ref).subscribe(data => {
       if(data > 0 ){
         this.prescriptions.splice(index, 1);
@@ -50,6 +57,13 @@ export class PrescriptionListComponent implements OnInit{
 
   public findByPrescriptionRef(ref: string) {
     this.prescriptionService.findByPrescriptionRef(ref).subscribe(data => this.seanceService.seances = data );
+  }
+
+  public findHistoriqueByPrescriptionRef(ref: string) {
+    this.historiqueService.findByPresccriptionRef(ref).subscribe(
+      data=> this.historiqueService.historiquePrescriptions = data);
+
+    this.router.navigateByUrl("/historique-prescription");
   }
 }
 

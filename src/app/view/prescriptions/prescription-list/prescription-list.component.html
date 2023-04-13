@@ -18,6 +18,7 @@
     <td><span (click)="deleteByRef(p,i);" class="btn btn-sm btn-danger fa fa-trash"></span>
       <span  class="btn btn-sm btn-primary fa fa-edit mx-3" (click)="update(i,p)" routerLink="/prescription-create"></span>
       <span  class="btn btn-sm btn-secondary  mx-3" (click)="findByPrescriptionRef(p.ref)" >Afficher Seance(s)</span>
+      <span  class="btn btn-sm btn-success  mx-3" (click)="findHistoriqueByPrescriptionRef(p.ref);" >Consulter l'historique</span>
     </td>
   </tr>
 

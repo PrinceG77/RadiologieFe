@@ -30,6 +30,8 @@ export class PatientListComponent implements OnInit{
 
   public deleteByCin(patient : Patient, index : number) : void{
 
+    let confirmation = confirm("Êtes-vous certain de vouloir supprimer ce patient ?");
+    if(!confirmation) return;
     this.patientService.deleteByCin(patient.cin).subscribe(data => {
       if(data > 0 ){
         alert("Patient supprimé avec succès !");
