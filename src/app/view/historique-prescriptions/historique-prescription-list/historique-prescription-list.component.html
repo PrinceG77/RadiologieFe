@@ -1,0 +1,20 @@
+<table class="table table-secondary table-striped table-hover caption-top">
+  <caption>Historique prescription</caption>
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Date historique</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let h of historiquePrescriptionService.historiquePrescriptions ; index as i">
+    <th scope="row">{{h.id}}</th>
+    <td>{{h.dateHistorique}}</td>
+
+  </tr>
+
+  </tbody>
+</table>
+
+
+
