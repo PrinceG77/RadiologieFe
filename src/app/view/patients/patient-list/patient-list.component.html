@@ -12,8 +12,9 @@
   <tr *ngFor="let p of patients; index as i">
     <th scope="row">{{p.cin}}</th>
     <td>{{p.nom}}</td>
-    <td><span (click)="deleteByCin(p,i);" class="btn btn-sm btn-danger fa fa-trash"></span>
-      <span  class="btn btn-sm btn-primary fa fa-edit mx-3" (click)="update(i,p)" routerLink="/patient-create"></span>
+    <td><span (click)="deleteByCin(p,i);" class="btn btn-sm btn-danger fa fa-trash"
+              *ngIf="authService.hasRole('ADMIN')"></span>
+      <span  class="btn btn-sm btn-primary fa fa-edit mx-3" (click)="update(i,p)" routerLink="/user/patient-create"></span>
     </td>
 
   </tr>

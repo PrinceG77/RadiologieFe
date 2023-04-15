@@ -5,6 +5,7 @@ import {Seance} from "../../../controller/model/seance.model";
 import {SeanceService} from "../../../controller/service/seance.service";
 import {Router} from "@angular/router";
 import {HistoriquePrescriptionService} from "../../../controller/service/historique-prescription.service";
+import {AuthenticationService} from "../../../controller/service/authentication.service";
 
 
 @Component({
@@ -15,7 +16,8 @@ import {HistoriquePrescriptionService} from "../../../controller/service/histori
 export class PrescriptionListComponent implements OnInit{
 
   constructor(private prescriptionService : PrescriptionService, public seanceService : SeanceService, private router : Router,
-              private historiqueService : HistoriquePrescriptionService) {
+              private historiqueService : HistoriquePrescriptionService,
+              public authService : AuthenticationService) {
   }
 
   ngOnInit(): void {
@@ -63,7 +65,7 @@ export class PrescriptionListComponent implements OnInit{
     this.historiqueService.findByPresccriptionRef(ref).subscribe(
       data=> this.historiqueService.historiquePrescriptions = data);
 
-    this.router.navigateByUrl("/historique-prescription");
+    this.router.navigateByUrl("/user/historique-prescription");
   }
 }
 

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PatientService} from "../../../controller/service/patient.service";
 import {Patient} from "../../../controller/model/patient.model";
+import {AuthenticationService} from "../../../controller/service/authentication.service";
 
 @Component({
   selector: 'app-patient-list',
@@ -12,7 +13,7 @@ export class PatientListComponent implements OnInit{
     this.findAll();
   }
 
-  constructor(private patientService : PatientService) {
+  constructor(private patientService : PatientService, public authService : AuthenticationService) {
   }
 
   public findAll() : void {
